@@ -6,7 +6,9 @@ const Breadcrumbs = (props) => {
   return (
     <div className={className}>
       <h2>
-        <Link to="/">Home</Link> / {props.category}
+        <Link to="/">Home</Link>
+        {props.category ? `/ ${props.category}` : ""}
+        {props.name ? `/ ${props.name}` : ""}
       </h2>
     </div>
   );

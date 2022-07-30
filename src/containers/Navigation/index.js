@@ -2,7 +2,7 @@ import Navigation from "../../components/Navigation";
 
 const NavigationContainer = (props) => {
   const className = "NavigationContainer";
-  const navigationMenu = ["characters", "starships", "planets"];
+  const navigationMenu = ["people", "starships", "planets"];
 
   return (
     <div className={className}>

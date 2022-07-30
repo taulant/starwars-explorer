@@ -13,12 +13,12 @@ root.render(
       <Routes>
         <Route path="/" element={<HomeContainer />} />
         <Route
-          path="characters"
-          element={<CategoryContainer category="characters" />}
+          path="people"
+          element={<CategoryContainer category="people" />}
         ></Route>
         <Route
-          path={`characters/:id`}
-          element={<PageContainer category="characters" />}
+          path={`people/:id`}
+          element={<PageContainer category="people" />}
         />
         <Route
           path="starships"
