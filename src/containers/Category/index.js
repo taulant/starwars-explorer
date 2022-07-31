@@ -46,7 +46,7 @@ const CategoryContainer = (props) => {
     }
   };
   return (
-    <>
+    <div className={className}>
       <Header />
       <Breadcrumbs category={props.category} />
       {!isLoading ? (
@@ -63,7 +63,7 @@ const CategoryContainer = (props) => {
           nextPage={nextPage}
         />
       )}
-    </>
+    </div>
   );
 };
 
