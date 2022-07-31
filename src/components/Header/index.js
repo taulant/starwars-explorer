@@ -3,7 +3,7 @@ const Header = (props) => {
 
   return (
     <div className={className}>
-      <h1>Star Wars Explorer</h1>
+      <h1 className="text-3xl font-bold">Star Wars Explorer</h1>
     </div>
   );
 };
