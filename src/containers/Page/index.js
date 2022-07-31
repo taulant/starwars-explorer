@@ -7,18 +7,20 @@ import Page from "../../components/Page";
 
 const PageContainer = (props) => {
   let [responseData, setResponseData] = useState("");
-
+  const [isLoading, setIsLoading] = useState(false);
   const className = "PageContainer";
   const { id } = useParams();
   const { category } = props;
 
   const fetchData = useCallback(() => {
+    setIsLoading(true);
     axios({
       method: "GET",
       url: `https://swapi.dev/api/${category}/${id}/`,
     })
       .then((response) => {
         setResponseData(response.data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -33,7 +35,7 @@ const PageContainer = (props) => {
     <div className={className}>
       <Header />
       <Breadcrumbs category={category} id={id} name={responseData.name} />
-      {responseData ? JSON.stringify(responseData) : <p>Loading...</p>}
+      {!isLoading ? JSON.stringify(responseData) : <p>Loading...</p>}
       <Page title={props.title} id={id} category={category}></Page>
     </div>
   );

@@ -9,20 +9,22 @@ const CategoryContainer = (props) => {
   const className = "CategoryContainer";
   const [responseData, setResponseData] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
   // const { id } = useParams();
   const { category } = props;
   const results = responseData?.results;
   const count = responseData?.count;
   const resultsLength = results?.length;
   const maxPages = Math.round(parseInt(count) / resultsLength);
-
   const fetchData = useCallback(() => {
+    setIsLoading(true);
     axios({
       method: "GET",
       url: `https://swapi.dev/api/${category}/?page=${currentPage}`,
     })
       .then((response) => {
         setResponseData(response.data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -47,8 +49,8 @@ const CategoryContainer = (props) => {
     <>
       <Header />
       <Breadcrumbs category={props.category} />
-      {responseData ? JSON.stringify(responseData.results) : <p>Loading...</p>}
-      {responseData && (
+      {!isLoading ? JSON.stringify(responseData.results) : <p>Loading...</p>}
+      {!isLoading && (
         <Pagination
           responseData={responseData}
           currentPage={currentPage}
