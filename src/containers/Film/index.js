@@ -27,9 +27,9 @@ const FilmContainer = (props) => {
   }, [fetchData]);
 
   return (
-    <p className={className}>
+    <li className={className}>
       {!isLoading ? responseData.title : "Loading..."}
-    </p>
+    </li>
   );
 };
 
