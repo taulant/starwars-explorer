@@ -35,8 +35,16 @@ const PageContainer = (props) => {
     <div className={className}>
       <Header />
       <Breadcrumbs category={category} id={id} name={responseData.name} />
-      {!isLoading ? JSON.stringify(responseData) : <p>Loading...</p>}
-      <Page title={props.title} id={id} category={category}></Page>
+      {!isLoading ? (
+        <Page
+          title={props.title}
+          id={id}
+          category={category}
+          entity={responseData}
+        ></Page>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 };

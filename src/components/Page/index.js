@@ -1,11 +1,12 @@
 const Page = (props) => {
   const className = "Page";
-
+  const { entity, category } = props;
+  const { name } = entity;
   return (
     <>
       <div className={className}>
-        <h1>{props.title}</h1>
-        <p>category: {props.category}</p>
+        <h1>{name}</h1>
+        <p>category: {category}</p>
         <p>id: {props.id}</p>
       </div>
     </>

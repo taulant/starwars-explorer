@@ -49,7 +49,11 @@ const CategoryContainer = (props) => {
     <>
       <Header />
       <Breadcrumbs category={props.category} />
-      {!isLoading ? JSON.stringify(responseData.results) : <p>Loading...</p>}
+      {!isLoading ? (
+        <Table category={props.category} list={responseData.results} />
+      ) : (
+        <p>Loading...</p>
+      )}
       {!isLoading && (
         <Pagination
           responseData={responseData}
@@ -59,7 +63,6 @@ const CategoryContainer = (props) => {
           nextPage={nextPage}
         />
       )}
-      <Table category={props.category} />
     </>
   );
 };
