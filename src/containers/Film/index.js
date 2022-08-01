@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
+import { SWAPI } from "../../utils/constants";
 
 const FilmContainer = (props) => {
   let [responseData, setResponseData] = useState("");
@@ -11,7 +12,7 @@ const FilmContainer = (props) => {
     setIsLoading(true);
     axios({
       method: "GET",
-      url: `https://swapi.dev/api/films/${id}/`,
+      url: `${SWAPI.URL}/${SWAPI.CATEGORY.FILMS}/${id}/`,
     })
       .then((response) => {
         setResponseData(response.data);

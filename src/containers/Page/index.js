@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import Header from "../../components/Header";
 import Page from "../../components/Page";
+import { SWAPI } from "../../utils/constants";
 import App from "../App";
 const PageContainer = (props) => {
   let [responseData, setResponseData] = useState("");
@@ -16,7 +17,7 @@ const PageContainer = (props) => {
     setIsLoading(true);
     axios({
       method: "GET",
-      url: `https://swapi.dev/api/${category}/${id}/`,
+      url: `${SWAPI.URL}/${category}/${id}/`,
     })
       .then((response) => {
         setResponseData(response.data);

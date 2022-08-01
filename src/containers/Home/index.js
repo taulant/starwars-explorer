@@ -3,7 +3,6 @@ import Header from "../../components/Header";
 import App from "../App";
 import NavigationContainer from "../Navigation";
 const HomeContainer = () => {
-  const className = "HomeContainer";
   return (
     <App>
       <Header />

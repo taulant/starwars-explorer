@@ -6,36 +6,38 @@ import HomeContainer from "./containers/Home";
 import PageContainer from "./containers/Page";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import { SWAPI } from "./utils/constants";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // TODO: Instead of hardcoding the Routes you can just make an object and map through it.
+// TODO: Add nicer error page
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeContainer />} />
         <Route
-          path="people"
-          element={<CategoryContainer category="people" />}
+          path={SWAPI.CATEGORY.PEOPLE}
+          element={<CategoryContainer category={SWAPI.CATEGORY.PEOPLE} />}
         ></Route>
         <Route
-          path={`people/:id`}
-          element={<PageContainer category="people" />}
+          path={`${SWAPI.CATEGORY.PEOPLE}/:id`}
+          element={<PageContainer category={SWAPI.CATEGORY.PEOPLE} />}
         />
         <Route
-          path="starships"
-          element={<CategoryContainer category="starships" />}
+          path={SWAPI.CATEGORY.STARSHIPS}
+          element={<CategoryContainer category={SWAPI.CATEGORY.STARSHIPS} />}
         />
         <Route
-          path={`starships/:id`}
-          element={<PageContainer category="starships" />}
+          path={`${SWAPI.CATEGORY.STARSHIPS}/:id`}
+          element={<PageContainer category={SWAPI.CATEGORY.STARSHIPS} />}
         />
         <Route
-          path="planets"
-          element={<CategoryContainer category="planets" />}
+          path={SWAPI.CATEGORY.PLANETS}
+          element={<CategoryContainer category={SWAPI.CATEGORY.PLANETS} />}
         />
         <Route
-          path={`planets/:id`}
-          element={<PageContainer category="planets" />}
+          path={`${SWAPI.CATEGORY.PLANETS}/:id`}
+          element={<PageContainer category={SWAPI.CATEGORY.PLANETS} />}
         />
         <Route
           path="/*"

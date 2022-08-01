@@ -4,6 +4,7 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 import Header from "../../components/Header";
 import Pagination from "../../components/Pagination";
 import Table from "../../components/Table";
+import { SWAPI } from "../../utils/constants";
 import App from "../App";
 // TODO Create a unit test for CategoryContainer
 const CategoryContainer = (props) => {
@@ -21,7 +22,7 @@ const CategoryContainer = (props) => {
     setIsLoading(true);
     axios({
       method: "GET",
-      url: `https://swapi.dev/api/${category}/?page=${currentPage}`,
+      url: `${SWAPI.URL}/${category}/?page=${currentPage}`,
     })
       .then((response) => {
         setResponseData(response.data);
