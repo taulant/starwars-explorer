@@ -6,6 +6,7 @@ const Table = (props) => {
 
   return (
     <div className={`${className} mb-4`}>
+      <h2 className="text-6xl font-bold capitalize">{category}</h2>
       {list &&
         list.map((item) => (
           <TableRow
