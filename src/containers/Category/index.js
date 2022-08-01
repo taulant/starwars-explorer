@@ -56,6 +56,7 @@ const CategoryContainer = (props) => {
     <App>
       <Header />
       <Breadcrumbs category={props.category} />
+      <h2 className="text-6xl font-bold capitalize">{category}</h2>
       {!isLoading ? (
         <Table category={props.category} list={responseData.results} />
       ) : (
