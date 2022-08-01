@@ -1,31 +1,49 @@
 import classNames from "classnames";
+import { range } from "../../utils";
 
 const Pagination = (props) => {
+  const {
+    currentPage,
+    maxPages,
+    prevPage,
+    nextPage,
+    responseData,
+    selectPage,
+  } = props;
   const className = "Pagination";
-  // TODO: Add page selection
   return (
     <div className={`${className} flex flex-row justify-between items-center`}>
       <button
-        onClick={() => props.prevPage()}
+        onClick={() => prevPage()}
         className={classNames({
-          button: props.currentPage > 1,
-          "button--inactive": props.currentPage == 1,
+          button: currentPage > 1,
+          "button--inactive": currentPage == 1,
         })}
       >
         Prev. Page
       </button>
-      <h3>
-        {props.responseData && (
+      <div>
+        {responseData && (
           <>
-            {props.currentPage} / {props.maxPages}
+            {range(maxPages).map((item) => (
+              <button
+                onClick={() => selectPage(item + 1)}
+                className={classNames({
+                  "button ml-1 mr-1 px-2 py-0": item + 1 !== currentPage,
+                  "button--inactive": item + 1 === currentPage,
+                })}
+              >
+                {item + 1}
+              </button>
+            ))}
           </>
         )}
-      </h3>
+      </div>
       <button
-        onClick={() => props.nextPage()}
+        onClick={() => nextPage()}
         className={classNames({
-          button: props.currentPage < props.maxPages,
-          "button--inactive": props.currentPage === props.maxPages,
+          button: currentPage < maxPages,
+          "button--inactive": currentPage === maxPages,
         })}
       >
         Next Page

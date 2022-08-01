@@ -37,16 +37,21 @@ const CategoryContainer = (props) => {
     fetchData();
   }, [fetchData, currentPage]);
 
-  const nextPage = () => {
+  const nextPage = useCallback(() => {
     if (currentPage < maxPages) {
       setCurrentPage(currentPage + 1);
     }
-  };
-  const prevPage = () => {
+  });
+  const prevPage = useCallback(() => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
-  };
+  });
+  const selectPage = useCallback((selectedPage) => {
+    if (selectedPage <= maxPages) {
+      setCurrentPage(selectedPage);
+    }
+  });
   return (
     <App>
       <Header />
@@ -63,6 +68,7 @@ const CategoryContainer = (props) => {
           maxPages={maxPages}
           prevPage={prevPage}
           nextPage={nextPage}
+          selectPage={selectPage}
         />
       )}
     </App>
