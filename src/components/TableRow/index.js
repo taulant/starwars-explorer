@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "../Button";
 
 const TableRow = (props) => {
   const className = "TableRow";
@@ -6,20 +7,31 @@ const TableRow = (props) => {
   const { name, birth_year, population, cost_in_credits } = entity;
   return (
     <div className={`${className} grid grid-cols-3 py-3 border-b-2`} key={id}>
-      <p>
-        <span className="mr-8 font-bold">{name}</span>
-      </p>
-      {birth_year && <span>Birth Year: {birth_year}</span>}
-      {population && <span>Population: {population}</span>}
-      {cost_in_credits && <span>Cost In Credits: {cost_in_credits}</span>}
+      <span className="flex items-center mr-8 font-bold">{name}</span>
+      {birth_year && (
+        <span className="flex items-center">Birth Year: {birth_year}</span>
+      )}
+      {population && (
+        <span className="flex items-center">Population: {population}</span>
+      )}
+      {cost_in_credits && (
+        <span className="flex items-center">
+          Cost:{" "}
+          {cost_in_credits != "unknown" ? (
+            <>
+              <span className="text-xl ml-2 mr-1">&#9797;</span>
+              {cost_in_credits}
+            </>
+          ) : (
+            cost_in_credits
+          )}
+        </span>
+      )}
 
       <span className="flex justify-end">
-        <Link
-          className="button px-2 py-0 flex items-center"
-          to={`/${category}/${id}`}
-        >
-          Read more
-        </Link>
+        <Button classNameAdd="px-2 py-1">
+          <Link to={`/${category}/${id}`}>Read more</Link>
+        </Button>
       </span>
     </div>
   );

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "../Button";
 
 const Breadcrumbs = (props) => {
   const className = "Breadcrumbs";
@@ -9,23 +10,25 @@ const Breadcrumbs = (props) => {
         {isHome ? (
           ""
         ) : (
-          <Link to="/" className="button">
-            <span>Home</span>
-          </Link>
+          <Button>
+            <Link to="/">
+              <span>Home</span>
+            </Link>
+          </Button>
         )}
         {props.category && props.name ? (
           <>
             <span className="ml-2 mr-2">/</span>
-            <Link to={`/${props.category}`} className="button capitalize">
-              {props.category}
-            </Link>
+            <Button classNameAdd="capitalize">
+              <Link to={`/${props.category}`}>{props.category}</Link>
+            </Button>
           </>
         ) : props.category ? (
           <>
             <span className="ml-2 mr-2">/</span>
-            <span className="button--inactive capitalize">
+            <Button inactive classNameAdd="capitalize">
               {props.category}
-            </span>
+            </Button>
           </>
         ) : (
           ""
@@ -33,7 +36,9 @@ const Breadcrumbs = (props) => {
         {props.name ? (
           <>
             <span className="ml-2 mr-2">/</span>
-            <span className="button-inactive">{props.name}</span>
+            <Button inactive classNameAdd="capitalize">
+              {props.name}
+            </Button>
           </>
         ) : (
           ""
