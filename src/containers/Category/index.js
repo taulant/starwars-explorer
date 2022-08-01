@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import Pagination from "../../components/Pagination";
 import Table from "../../components/Table";
 import App from "../App";
+// TODO Create a unit test for CategoryContainer
 const CategoryContainer = (props) => {
   const className = "CategoryContainer";
   const [responseData, setResponseData] = useState("");

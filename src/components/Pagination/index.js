@@ -1,5 +1,6 @@
 const Pagination = (props) => {
   const className = "Pagination";
+  // TODO: Add page selection
   return (
     <div className={`${className} flex flex-row justify-between items-center`}>
       <button onClick={() => props.prevPage()} className="button">

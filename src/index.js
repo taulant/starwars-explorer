@@ -7,6 +7,7 @@ import PageContainer from "./containers/Page";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+// TODO: Instead of hardcoding the Routes you can just make an object and map through it.
 root.render(
   <React.StrictMode>
     <BrowserRouter>

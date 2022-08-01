@@ -4,6 +4,7 @@ const Page = (props) => {
   const className = "Page";
   const { entity, category } = props;
   const { name, films } = entity;
+  // TODO: Add more details to the page
   return (
     <div className={className}>
       <h2 className="text-6xl font-bold mb-4">{name}</h2>
