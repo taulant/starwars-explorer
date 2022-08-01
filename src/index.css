@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .button {
+    @apply px-4 py-2 bg-white text-black rounded-3xl active:shadow-sm border-2 border-white shadow-md hover:shadow-xl items-center;
+  }
+  .button--inactive {
+    @apply px-4 py-2 bg-white text-black rounded-3xl border-2 border-white;
+  }
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

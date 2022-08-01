@@ -4,9 +4,12 @@ const Navigation = (props) => {
   if (props.navigation) {
     return (
       <nav>
-        <ul>
+        <ul className="pt-5">
           {props.navigation.map((item) => (
-            <li key={item}>
+            <li
+              key={item}
+              className="hover:underline text-6xl capitalize font-bold pb-2"
+            >
               <Link to={`/${item}`}>{item}</Link>
             </li>
           ))}

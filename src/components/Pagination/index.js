@@ -1,7 +1,10 @@
 const Pagination = (props) => {
   const className = "Pagination";
   return (
-    <div>
+    <div className={`${className} flex flex-row justify-between items-center`}>
+      <button onClick={() => props.prevPage()} className="button">
+        Prev. Page
+      </button>
       <h3>
         {props.responseData && (
           <>
@@ -9,8 +12,9 @@ const Pagination = (props) => {
           </>
         )}
       </h3>
-      <button onClick={() => props.prevPage()}>Previous Page</button>
-      <button onClick={() => props.nextPage()}>Next Page</button>
+      <button onClick={() => props.nextPage()} className="button">
+        Next Page
+      </button>
     </div>
   );
 };

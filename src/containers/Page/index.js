@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import Header from "../../components/Header";
 import Page from "../../components/Page";
-
+import App from "../App";
 const PageContainer = (props) => {
   let [responseData, setResponseData] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -32,7 +32,7 @@ const PageContainer = (props) => {
   }, [fetchData]);
 
   return (
-    <div className={className}>
+    <App>
       <Header />
       <Breadcrumbs category={category} id={id} name={responseData.name} />
       {!isLoading ? (
@@ -45,7 +45,7 @@ const PageContainer = (props) => {
       ) : (
         <p>Loading...</p>
       )}
-    </div>
+    </App>
   );
 };
 

@@ -4,7 +4,7 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 import Header from "../../components/Header";
 import Pagination from "../../components/Pagination";
 import Table from "../../components/Table";
-
+import App from "../App";
 const CategoryContainer = (props) => {
   const className = "CategoryContainer";
   const [responseData, setResponseData] = useState("");
@@ -46,7 +46,7 @@ const CategoryContainer = (props) => {
     }
   };
   return (
-    <div className={className}>
+    <App>
       <Header />
       <Breadcrumbs category={props.category} />
       {!isLoading ? (
@@ -63,7 +63,7 @@ const CategoryContainer = (props) => {
           nextPage={nextPage}
         />
       )}
-    </div>
+    </App>
   );
 };
 

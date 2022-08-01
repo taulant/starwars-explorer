@@ -6,15 +6,17 @@ const Page = (props) => {
   const { name, films } = entity;
   return (
     <div className={className}>
-      <h1>{name}</h1>
-      <p>category: {category}</p>
-      <p>id: {props.id}</p>
-      <ul>
-        {films &&
-          films.map((film) => {
-            return <FilmContainer id={getId(film)} />;
-          })}
-      </ul>
+      <h2 className="text-6xl font-bold mb-4">{name}</h2>
+      {films && (
+        <>
+          <h3 className="font-bold text-xl">Seen in the following films</h3>
+          <ul>
+            {films.map((film) => {
+              return <FilmContainer id={getId(film)} />;
+            })}
+          </ul>
+        </>
+      )}
     </div>
   );
 };

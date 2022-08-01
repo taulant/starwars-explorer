@@ -5,7 +5,7 @@ const Table = (props) => {
   const { list, category } = props;
 
   return (
-    <div className={className}>
+    <div className={`${className} mb-4`}>
       {list &&
         list.map((item) => (
           <TableRow
