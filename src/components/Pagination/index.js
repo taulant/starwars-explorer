@@ -20,13 +20,14 @@ const Pagination = (props) => {
       <div>
         {responseData && (
           <>
-            {range(maxPages).map((item) => (
+            {range(maxPages).map((item, i) => (
               <Button
                 handleOnClick={() => {
                   selectPage(item + 1);
                 }}
                 inactive={item + 1 === currentPage}
                 classNameAdd="ml-1 mr-1 px-2 py-0"
+                key={i}
               >
                 {item + 1}
               </Button>

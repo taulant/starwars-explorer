@@ -12,8 +12,8 @@ const Page = (props) => {
         <>
           <h3 className="font-bold text-xl">Seen in the following films</h3>
           <ul>
-            {films.map((film) => {
-              return <FilmContainer id={getId(film)} />;
+            {films.map((film, i) => {
+              return <FilmContainer id={getId(film)} key={i} />;
             })}
           </ul>
         </>

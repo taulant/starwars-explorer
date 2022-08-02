@@ -10,7 +10,7 @@ const Button = (props) => {
         [classNameAdd]: classNameAdd,
       })}
       onClick={() => {
-        handleOnClick();
+        handleOnClick && handleOnClick();
       }}
     >
       {children}
