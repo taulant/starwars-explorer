@@ -10,7 +10,6 @@ import reportWebVitals from "./reportWebVitals";
 import { SWAPI } from "./utils/constants";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // TODO: Instead of hardcoding the Routes you can just make an object and map through it.
-// TODO: Add nicer error page
 root.render(
   <React.StrictMode>
     <BrowserRouter>

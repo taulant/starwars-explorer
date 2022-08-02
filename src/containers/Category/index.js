@@ -6,7 +6,6 @@ import Pagination from "../../components/Pagination";
 import Table from "../../components/Table";
 import { SWAPI } from "../../utils/constants";
 import App from "../App";
-// TODO Create a unit test for CategoryContainer
 const CategoryContainer = (props) => {
   const className = "CategoryContainer";
   const [responseData, setResponseData] = useState("");
@@ -56,7 +55,7 @@ const CategoryContainer = (props) => {
     <App>
       <Header />
       <Breadcrumbs category={props.category} />
-      <h2 className="text-6xl font-bold capitalize">{category}</h2>
+      <h2 className="text-6xl font-bold capitalize mb-4">{category}</h2>
       {!isLoading ? (
         <Table category={props.category} list={responseData.results} />
       ) : (
