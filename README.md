@@ -4,6 +4,8 @@
 
 This web client uses React Hooks to create a view for browsing of Star Wars film data. The project is using a free and publicly available API service called [SWAPI](https://swapi.dev/).
 
+![star-wars-explorer](https://user-images.githubusercontent.com/1487469/182269771-87c55abb-182d-4883-9557-d6a729cc398a.gif)
+
 How to use the website
 
 1. Select one on of the categories
