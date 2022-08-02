@@ -6,23 +6,26 @@ const Breadcrumbs = (props) => {
   const { category, name } = props;
   const className = "Breadcrumbs";
   const isHome = window.location.pathname === "/";
-  const breadcrumbsData = useMemo(() => [
-    {
-      name: "Home",
-      to: "/",
-      inactive: isHome,
-    },
-    {
-      name: category,
-      to: `/${category}`,
-      inactive: category && !name,
-    },
-    {
-      name: name,
-      to: null,
-      inactive: category && name,
-    },
-  ]);
+  const breadcrumbsData = useMemo(
+    () => [
+      {
+        name: "Home",
+        to: "/",
+        inactive: isHome,
+      },
+      {
+        name: category,
+        to: `/${category}`,
+        inactive: category && !name,
+      },
+      {
+        name: name,
+        to: null,
+        inactive: category && name,
+      },
+    ],
+    [category, name]
+  );
   return (
     <div className={`${className} mb-4`}>
       {!isHome &&

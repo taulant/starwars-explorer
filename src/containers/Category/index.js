@@ -43,17 +43,20 @@ const CategoryContainer = (props) => {
     if (currentPage < maxPages) {
       setCurrentPage(currentPage + 1);
     }
-  });
+  }, [results]);
   const prevPage = useCallback(() => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
-  });
-  const selectPage = useCallback((selectedPage) => {
-    if (selectedPage <= maxPages) {
-      setCurrentPage(selectedPage);
-    }
-  });
+  }, [results]);
+  const selectPage = useCallback(
+    (selectedPage) => {
+      if (selectedPage <= maxPages) {
+        setCurrentPage(selectedPage);
+      }
+    },
+    [results]
+  );
   return (
     <App>
       <Header />
