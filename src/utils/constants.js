@@ -6,4 +6,5 @@ export const SWAPI = {
     PLANETS: "planets",
     FILMS: "films",
   },
+  PAGINATION_LENGTH: 10,
 };

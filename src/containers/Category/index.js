@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import Header from "../../components/Header";
 import Pagination from "../../components/Pagination";
@@ -15,8 +16,8 @@ const CategoryContainer = (props) => {
   const { category } = props;
   const results = responseData?.results;
   const count = responseData?.count;
-  const resultsLength = results?.length;
-  const maxPages = Math.round(parseInt(count) / resultsLength);
+  const maxPages = Math.ceil(parseInt(count) / SWAPI.PAGINATION_LENGTH);
+  const navigate = useNavigate();
   const fetchData = useCallback(() => {
     setIsLoading(true);
     axios({
@@ -29,6 +30,8 @@ const CategoryContainer = (props) => {
       })
       .catch((error) => {
         console.log(error);
+        setIsLoading(false);
+        navigate("/error");
       });
   }, [currentPage]);
 

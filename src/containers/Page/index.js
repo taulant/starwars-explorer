@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import Header from "../../components/Header";
 import Page from "../../components/Page";
@@ -12,7 +12,7 @@ const PageContainer = (props) => {
   const className = "PageContainer";
   const { id } = useParams();
   const { category } = props;
-
+  const navigate = useNavigate();
   const fetchData = useCallback(() => {
     setIsLoading(true);
     axios({
@@ -25,6 +25,8 @@ const PageContainer = (props) => {
       })
       .catch((error) => {
         console.log(error);
+        setIsLoading(false);
+        navigate("/error");
       });
   }, []);
 
