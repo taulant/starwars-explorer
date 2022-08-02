@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CategoryContainer from "./containers/Category";
+import ErrorContainer from "./containers/Error";
 import HomeContainer from "./containers/Home";
 import PageContainer from "./containers/Page";
 import "./index.css";
@@ -39,14 +40,7 @@ root.render(
           path={`${SWAPI.CATEGORY.PLANETS}/:id`}
           element={<PageContainer category={SWAPI.CATEGORY.PLANETS} />}
         />
-        <Route
-          path="/*"
-          element={
-            <Link to="/">
-              We can't find what your are looking for. Go back to home "/".
-            </Link>
-          }
-        />
+        <Route path="/*" element={<ErrorContainer />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
