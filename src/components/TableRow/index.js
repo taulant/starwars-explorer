@@ -7,7 +7,7 @@ const TableRow = (props) => {
   const { name, birth_year, population, cost_in_credits } = entity;
   return (
     <div className={`${className} grid grid-cols-3 py-3 border-b-2`} key={id}>
-      <span className="flex items-center mr-8 font-bold">{name}</span>
+      <span className="flex items-center mr-8 md:text-2xl">{name}</span>
       {birth_year && (
         <span className="flex items-center">Birth Year: {birth_year}</span>
       )}

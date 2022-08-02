@@ -10,7 +10,7 @@ const Navigation = (props) => {
               key={item}
               className="hover:underline text-6xl capitalize font-bold pb-2"
             >
-              <Link to={`/${item}`}>{item}</Link>
+              <Link to={`/${item}`}>&#10132; {item}</Link>
             </li>
           ))}
         </ul>
