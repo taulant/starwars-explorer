@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Star Wars Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Info
 
-## Available Scripts
+This web client uses React Hooks to create a view for browsing of Star Wars film data. The project is using a free and publicly available API service called [SWAPI](https://swapi.dev/).
 
-In the project directory, you can run:
+How to use the website
 
-### `npm start`
+1. Select one on of the categories
+2. The entities for each category will be listed in a table
+3. Use the "Read More" button to read more about each entity in a separate page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Disclaimer
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This is for tech demo purposes and this project is not affiliated with Star Wars or Disney in any way.
 
-### `npm test`
+## Before you run this project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+It is recommended to use yarn for installing and running this project. To check if you have yarn installed run the following command in your terminal app.
 
-### `npm run build`
+```
+$ yarn --version
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you don't have yarn installed run the following command to install it globally.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+$ npm install --global yarn
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For more info about yarn look at [yarn's official installation documentation](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable).
 
-### `npm run eject`
+## How to run the project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+First you need to `cd` into the the project folder and run the `yarn install` command to install the packages and dependencies.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+$ yarn install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If `yarn install` command ran correctly then you will be ready to run the project with the command below.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+$ yarn start
+```
 
-## Learn More
+If all went correctly `yarn start` will run the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Running Storybook
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Storybook facilitates the indexing and testing the states of components.
+While inside the project root folder, run storybook with the command below.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+$ yarn storybook
+```
