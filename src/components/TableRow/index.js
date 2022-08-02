@@ -29,9 +29,9 @@ const TableRow = (props) => {
       )}
 
       <span className="flex justify-end">
-        <Button classNameAdd="px-2 py-1">
-          <Link to={`/${category}/${id}`}>Read more</Link>
-        </Button>
+        <Link to={`/${category}/${id}`}>
+          <Button classNameAdd="px-2 py-1">Read more</Button>
+        </Link>
       </span>
     </div>
   );
