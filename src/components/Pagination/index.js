@@ -14,7 +14,7 @@ const Pagination = (props) => {
 
   return (
     <div className={`${className} flex flex-row justify-between items-center`}>
-      <Button onClick={() => prevPage()} inactive={currentPage == 1}>
+      <Button handleOnClick={() => prevPage()} inactive={currentPage == 1}>
         Prev. Page
       </Button>
       <div>
@@ -34,7 +34,10 @@ const Pagination = (props) => {
           </>
         )}
       </div>
-      <Button onClick={() => nextPage()} inactive={currentPage === maxPages}>
+      <Button
+        handleOnClick={() => nextPage()}
+        inactive={currentPage === maxPages}
+      >
         Next Page
       </Button>
     </div>
